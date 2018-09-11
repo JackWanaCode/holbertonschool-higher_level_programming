@@ -7,8 +7,6 @@ elif number < 0:
     last_num = number % 10
     if last_num != 0:
         last_num = last_num - 10
-print(number)
-print(last_num)
 string = "Last digit of " + str(number) + " is " + str(last_num)
 if last_num > 5:
     print(string + " and is greater than 5")
