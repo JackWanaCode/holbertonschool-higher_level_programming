@@ -9,20 +9,22 @@
  */
 int is_palindrome(listint_t **head)
 {
+	listint_t *af_last = NULL;
+	listint_t *curr = *head;
 	listint_t *last = *head;
-	listint_t *bf_last = NULL;
 
-	if (!(*head))
-		return (1);
-	while (last->next)
-	{
-		bf_last = last;
-		last = last->next;
-	}
-	if (*head == last || *head == bf_last)
-		return (1);
-	else if ((*head)->n != last->n)
+	if (*head == NULL)
 		return (0);
-	bf_last->next = NULL;
-	return (is_palindrome(&(*head)->next));
+	while (1)
+	{
+		while (last->next != af_last)
+			last = last->next;
+		if (curr->n != last->n)
+			return (0);
+		if (curr == last || curr->next == last)
+			return (1);
+		curr = curr->next;
+		af_last = last;
+		last = curr;
+	}
 }
