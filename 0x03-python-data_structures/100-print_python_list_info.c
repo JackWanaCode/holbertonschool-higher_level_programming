@@ -3,7 +3,7 @@
 #include <string.h>
 #include <object.h>
 
-/*
+/**
  * print_python_list_info - Entry Point
  * Description: print information of list
  * @p: pointer pointing to list
