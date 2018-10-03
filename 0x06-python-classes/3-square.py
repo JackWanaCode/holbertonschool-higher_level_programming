@@ -11,5 +11,7 @@ class Square:
             raise Exception("size must be an integer")
         except ValueError:
             raise Exception("size must be >= 0")
+
     def area(self):
+        """calculate area of square"""
         return self.__size * self.__size
