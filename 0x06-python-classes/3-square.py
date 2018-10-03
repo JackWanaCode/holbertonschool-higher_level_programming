@@ -4,13 +4,10 @@ class Square:
     def __init__(self, size=0):
         """initialize the data."""
         self.__size = size
-        try:
-            if self.__size < 0:
-                int("dog")
-        except TypeError:
-            raise Exception("size must be an integer")
-        except ValueError:
-            raise Exception("size must be >= 0")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        elif str(size) == size:
+            raise TypeError("size must be an integer")
 
     def area(self):
         """calculate area of square"""
