@@ -11,14 +11,12 @@ class Square:
 
     @size.setter
     def size(self, value):
-        try:
-            if value < 0:
-                int("dog")
+        if int(value) < 0:
+            raise ValueError("size must be >= 0")
+        elif value != int(value):
+            raise TypeError("size must be an integer")
+        else:
             self.__size = value
-        except TypeError:
-            raise Exception("size must be an integer")
-        except ValueError:
-            raise Exception("size must be >= 0")
 
     def area(self):
         """calculate area of square"""
@@ -27,8 +25,7 @@ class Square:
     def my_print(self):
         """"print square with #"""
         for i in range(self.__size):
-            for j in range(self.__size):
-                print("#", end="")
+            print("#" * self.__size, end="")
             print("")
         if self.__size == 0:
             print("")
