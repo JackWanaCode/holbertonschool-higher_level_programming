@@ -5,7 +5,7 @@ class Square:
         """initialize the data."""
         self.__size = size
         try:
-            if size < 0:
+            if self.__size < 0:
                 int("dog")
         except TypeError:
             raise Exception("size must be an integer")
