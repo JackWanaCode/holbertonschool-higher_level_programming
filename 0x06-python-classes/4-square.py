@@ -3,7 +3,7 @@ class Square:
     """create Square class"""
     def __init__(self, size=0):
         """initialize the data."""
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
