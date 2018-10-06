@@ -1,12 +1,13 @@
 0x07. Python - Test-driven development
+
 Target of this project:
 
-What’s an interactive test
-Why tests are important
-How to write Docstrings to create tests
-How to write documentation for each module and function
-What are the basic option flags to create tests
-How to find edge cases
+What’s an interactive test.\n
+Why tests are important.
+How to write Docstrings to create tests.
+How to write documentation for each module and function.
+What are the basic option flags to create tests.
+How to find edge cases.
 
 1. Divide a matrix
 
