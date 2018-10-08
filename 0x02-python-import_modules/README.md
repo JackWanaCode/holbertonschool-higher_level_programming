@@ -129,18 +129,18 @@ Usage: ./100-my_calculator.py a operator b
 
  - If the number of arguments is not 3, your program has to:
 
-   - print Usage: ./100-my_calculator.py <a> <operator> <b> followed with a new line
+   - print Usage: ./100-my_calculator.py a operator b followed with a new line
    - exit with the value 1
 
  - operator can be:
 
-   - + for addition
+   - \+ for addition
 
-   - - for subtraction
+   - \- for subtraction
 
-   - - * for multiplication
+   - \* for multiplication
 
-   - - / for division
+   - \/ for division
 
  - If the operator is not one of the above:
 
@@ -150,7 +150,7 @@ Usage: ./100-my_calculator.py a operator b
 
  - You can cast a and b into integers by using int() (you can assume that all arguments will be castable into integers)
 
- - The result should be printed like this: <a> <operator> <b> = <result>, followed by a new line
+ - The result should be printed like this: a operator b = result, followed by a new line
 
 You are not allowed to use * for importing or __import__
 
