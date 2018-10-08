@@ -30,7 +30,7 @@ You have to assign:
 
 a and b must be define in 2 different lines: a = 1 and another b = 2
 
-Your program should print: <a value> + <b value> = <add(a, b) value> followed with a new line
+Your program should print: a value + b value = add(a, b) value followed with a new line
 
 You can only use the word add_0 once in your code
 
