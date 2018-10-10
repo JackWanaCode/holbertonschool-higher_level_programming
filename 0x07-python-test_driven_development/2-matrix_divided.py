@@ -32,7 +32,7 @@ def matrix_divided(matrix, div):
     except Exception as e:
         raise e
     if div == 0:
-        raise ZeroDivisionError("division by Zero")
+        raise ZeroDivisionError("division by zero")
     elif type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
     else:
