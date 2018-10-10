@@ -3,6 +3,7 @@ class Rectangle:
     """make a new class Rectangle"""
     number_of_instances = 0
     print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """initialize class attributes"""
         self.height = height
@@ -29,9 +30,9 @@ class Rectangle:
     @width.setter
     def width(self, value):
         if type(value) is not int:
-            raise TypeError("height must be an integer")
+            raise TypeError("width must be an integer")
         elif value < 0:
-            raise ValueError("height must be >= 0")
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
@@ -49,9 +50,9 @@ class Rectangle:
     def __str__(self):
         """print a square of '#'"""
         lis = []
+
         for i in range(self.height):
             if self.width > 0:
-#                self.print_symbol = Rectangle.print_symbol
                 lis += [str(self.print_symbol) * self.width]
         return "\n".join(lis)
 
@@ -62,7 +63,8 @@ class Rectangle:
     def __del__(self):
         """delete a instance"""
         Rectangle.number_of_instances -= 1
-        print ("Bye rectangle...")
+
+        print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -81,6 +83,3 @@ class Rectangle:
     def square(cls, size=0):
         """return new instance with width = height = size"""
         return cls(size, size)
-
-#    def square(size=0):
-#        return Rectangle(size, size)
