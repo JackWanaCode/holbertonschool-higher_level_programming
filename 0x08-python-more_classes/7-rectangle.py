@@ -3,6 +3,7 @@ class Rectangle:
     """make a new class Rectangle"""
     number_of_instances = 0
     print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """initialize class attributes"""
         self.height = height
@@ -49,17 +50,18 @@ class Rectangle:
     def __str__(self):
         """print a square of '#'"""
         lis = []
+
         for i in range(self.height):
             if self.width > 0:
-#                self.print_symbol = Rectangle.print_symbol
                 lis += [str(self.print_symbol) * self.width]
         return "\n".join(lis)
 
     def __repr__(self):
         """print repr"""
-        return ("Rectangle({}, {})".format(self.width, self.height))
+        return("Rectangle({}, {})".format(self.width, self.height))
 
     def __del__(self):
         """delete a instance"""
         Rectangle.number_of_instances -= 1
-        print ("Bye rectangle...")
+
+        print("Bye rectangle...")
