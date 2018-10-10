@@ -2,6 +2,7 @@
 class Rectangle:
     """make a new class Rectangle"""
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """initialize class attributes"""
         self.height = height
@@ -60,4 +61,5 @@ class Rectangle:
     def __del__(self):
         """delete a instance"""
         Rectangle.number_of_instances -= 1
-        print ("Bye rectangle...")
+
+        print("Bye rectangle...")
