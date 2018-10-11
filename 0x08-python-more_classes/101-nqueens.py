@@ -110,9 +110,12 @@ def run(size):
             arr = queen.move_queen(arr)
             status.stat_arr.append(arr)
             i += 1
+            if i == size + 1:
+                print(status.return_comb())
         elif queen.pos_x == -1:
             """ go back to previouse status when
-            no more cell for Queen moving """
+            no more cell for Queen moving
+            """
             if len(status.stat_arr) > 2:
                 status.stat_arr.pop()
                 arr = status.stat_arr[-1]
@@ -126,15 +129,4 @@ def run(size):
                     i = 1
                 else:
                     exit()
-        if i == size + 1:
-            """ print the list combination when
-            have N queens located on chess board """
-            print(status.return_comb())
-            if status.check_2():
-                arr = status.check_2()
-                status.reset_arr()
-                i = 1
-            else:
-                return
-
 run(int(argv[1]))
