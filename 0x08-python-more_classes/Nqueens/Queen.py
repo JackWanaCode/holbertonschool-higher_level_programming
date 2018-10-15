@@ -9,7 +9,9 @@ class Queen:
         self.size = size
 
     def set_queen(self, status):
-        """locate Queen on Board at empty cell"""
+        """locate Queen on Board at empty cell
+        return number of queen when success
+        otherwise, return 0"""
         for x in range(self.size):
             if status.stat_arr[self.pos_y][x] == 0:
                 self.pos_x = x
@@ -19,7 +21,8 @@ class Queen:
         return 0
 
     def move_queen(self, status):
-        """move the queen follow queen rules"""
+        """move the queen follow queen rules at current rows
+        cell value is y-direction of queen"""
         for i in range(self.size):
             if status.stat_arr[self.pos_y][i] == 0:
                 status.stat_arr[self.pos_y][i] = self.pos_y + 1
@@ -32,5 +35,6 @@ class Queen:
                 if status.stat_arr[self.pos_y + i][self.pos_x - i] == 0:
                     status.stat_arr[self.pos_y + i][self.pos_x - i] = self.pos_y + 1
         if self.pos_y + 1 < self.size:
+            """y is not the last row, else, no movement"""
             self.pos_y = self.pos_y + 1
         self.pos_x = 0
