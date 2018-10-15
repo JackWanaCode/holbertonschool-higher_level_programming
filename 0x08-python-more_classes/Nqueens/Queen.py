@@ -1,5 +1,3 @@
-#from Board import Board
-#from Status import Status
 
 class Queen:
     def __init__(self, size=0, pos_x=0, pos_y=0, number=0):
@@ -21,8 +19,8 @@ class Queen:
         return 0
 
     def move_queen(self, status):
-        """move the queen follow queen rules at current rows
-        cell value is y-direction of queen"""
+        """move the queen follow queen rules and
+        cell value is filled by value of y-direction of queen"""
         for i in range(self.size):
             if status.stat_arr[self.pos_y][i] == 0:
                 status.stat_arr[self.pos_y][i] = self.pos_y + 1
