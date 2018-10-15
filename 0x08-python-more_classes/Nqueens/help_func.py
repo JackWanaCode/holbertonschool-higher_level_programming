@@ -1,10 +1,8 @@
 from Queen import Queen
-#from Board import Board
 from Status import Status
 from sys import argv
 
 def run(size):
-#    board = Board(size, [])
     status = Status(size, [[0 for x in range(size)] for y in range(size)])
     queen = Queen(size)
     i = 1
