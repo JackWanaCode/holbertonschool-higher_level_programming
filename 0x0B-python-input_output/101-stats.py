@@ -4,7 +4,8 @@ slit_line = []
 file_size = 0
 num_file = {}
 ct = 0
-while True:
+
+for line in sys.stdin:
     ct += 1
     line = sys.stdin.readline()
     split_line = line.split()
@@ -19,5 +20,4 @@ while True:
             sys.stdout.write("{}: {}\n".format(k, v))
         num_file = {}
         file_size = 0
-        ct = 1
-        sys.stdout.flush()
+        ct = 0
