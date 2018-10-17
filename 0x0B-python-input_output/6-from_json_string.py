@@ -8,4 +8,4 @@ def from_json_string(my_str):
     my_obj: object
     Return: JSON presentation
     """
-    return json.dumps(json.loads(my_str), sort_keys=True)
+    return json.loads(my_str)
