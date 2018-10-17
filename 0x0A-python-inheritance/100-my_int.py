@@ -13,8 +13,8 @@ class MyInt(int):
 
     def __eq__(self, other):
         """compare two integer"""
-        return self.value == other
+        return self.value != other
 
     def __ne__(self, other):
         """compare two integer"""
-        return self.value != other
+        return self.value == other
