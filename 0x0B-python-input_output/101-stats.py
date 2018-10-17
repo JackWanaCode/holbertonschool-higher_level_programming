@@ -16,7 +16,7 @@ for line in sys.stdin:
         num_file[split_line[-2]] = 0
     if ct == 10:
         sys.stdout.write("File size: {}\n".format(file_size))
-        for k, v in num_file.items():
+        for k, v in sorted(num_file.items()):
             sys.stdout.write("{}: {}\n".format(k, v))
         num_file = {}
         file_size = 0
