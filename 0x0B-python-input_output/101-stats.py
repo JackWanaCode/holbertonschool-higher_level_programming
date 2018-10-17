@@ -6,6 +6,7 @@ file_size = 0
 num_file = {}
 ct = 0
 
+
 def signal_handler(signal, frame):
     sys.stdout.write("File size: {}\n".format(file_size))
     for k, v in sorted(num_file.items()):
