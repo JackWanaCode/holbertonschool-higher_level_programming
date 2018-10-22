@@ -88,9 +88,10 @@ class Rectangle(Base):
     def __str__(self, tail=None):
         """print a str format"""
         name = self.__class__.__name__
-        if tail == None:
+        if tail is None:
             tail = "{}/{}".format(self.width, self.height)
-        return ("[{}] ({}) {}/{} - {}".format(name, self.id, self.x, self.y, tail))
+        return ("[{}] ({}) {}/{} - {}".format
+                (name, self.id, self.x, self.y, tail))
 
     def update(self, *args, **kwargs):
         """update and assign attribute"""

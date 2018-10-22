@@ -2,9 +2,11 @@
 import json
 import csv
 
+
 class Base:
     """a new class named Base"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """initiallize data"""
         if id is None:
@@ -53,7 +55,6 @@ class Base:
             for l in lis:
                 fwrite.writerow(l)
 
-
     @staticmethod
     def from_json_string(json_string):
         return json.loads(json_string)
@@ -82,7 +83,7 @@ class Base:
         """a method to create a instance from csv file"""
         name = str(cls.__name__) + ".csv"
         if name == "Rectangle.csv":
-            fieldnames = sorted(['id', 'width', 'height', 'x' ,'y'])
+            fieldnames = sorted(['id', 'width', 'height', 'x', 'y'])
         else:
             fieldnames = sorted(['size', 'x', 'y', 'id'])
         new_list = []
