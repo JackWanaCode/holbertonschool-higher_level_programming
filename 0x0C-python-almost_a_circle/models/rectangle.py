@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""rectangle models"""
 from .base import Base
 
 
