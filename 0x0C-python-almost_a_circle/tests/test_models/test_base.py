@@ -38,6 +38,13 @@ class TestBase(unittest.TestCase):
                                 '10, "y": 8, "id": 1}]'))
         self.assertEqual(type(json_dictionary), str)
 
+    def test_json_dict_to_str_0(self):
+        """test json, convert dict to str"""
+        Base._Base__nb_objects = 0
+        dictionary = None
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(json_dictionary, '[]')
+
     def test_json_str_to_file_0(self):
         """test jason str to file"""
         Base._Base__nb_objects = 0
@@ -50,6 +57,14 @@ class TestBase(unittest.TestCase):
         self.assertEqual(sorted(string), sorted(
                 '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, '
                 '{"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]'))
+
+    def test_json_str_to_file_1(self):
+        """test jason str to file"""
+        Base._Base__nb_objects = 0
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            string = file.read()
+        self.assertEqual(string, '[]')
 
     def test_json_str_to_dic_1(self):
         """test json, str to dictionary"""
@@ -64,6 +79,20 @@ class TestBase(unittest.TestCase):
                                         'id': 89}, {'height': 7, 'width': 1,
                                                     'id': 7}])
 
+    def test_json_str_to_dic_2(self):
+        """test json, str to dictionary"""
+        Base._Base__nb_objects = 0
+        json_list_input = None
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(list_output, [])
+
+    def test_json_str_to_dic_3(self):
+        """test json, str to dictionary"""
+        Base._Base__nb_objects = 0
+        json_list_input = "[]"
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(list_output, [])
+
     def test_json_create_1(self):
         """json create"""
         Base._Base__nb_objects = 0
@@ -72,7 +101,7 @@ class TestBase(unittest.TestCase):
         r5 = Rectangle.create(**r4_dictionary)
         self.assertEqual(r5.__str__(), '[Rectangle] (1) 1/0 - 3/5')
 
-    def test_json_load_file(self):
+    def test_json_load_file_1(self):
         """json load file"""
         Base._Base__nb_objects = 0
         r2 = Rectangle(10, 7, 2, 8)
@@ -82,6 +111,14 @@ class TestBase(unittest.TestCase):
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEquals([obj.__dict__ for obj in list_rectangles_input],
                           [obj.__dict__ for obj in list_rectangles_output])
+
+    def test_json_load_file_2(self):
+        """json load file"""
+        Base._Base__nb_objects = 0
+        try:
+            list_rectangles_output = Rectangle.load_from_file()
+        except IOError:
+            self.assertEquals(list_rectangles_output, [])
 
     def test_csv_1(self):
         """test csv1"""

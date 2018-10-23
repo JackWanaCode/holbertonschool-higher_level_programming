@@ -24,7 +24,7 @@ class Base:
         list_dictionaries: a list of dictionaries
         """
         lis = []
-        if list_dictionaries is None:
+        if list_dictionaries in [[None], []]:
             return "[]"
         for dictionary in list_dictionaries:
             lis += [dictionary]
