@@ -59,6 +59,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        if json_string is None or json == "":
+            return ""
         return json.loads(json_string)
 
     @classmethod
@@ -74,11 +76,14 @@ class Base:
         name = str(cls.__name__) + ".json"
         lis = []
         new_lis = []
-        with open(name, 'r') as f:
-            lis = cls.from_json_string(f.read())
-            for item in lis:
-                new_lis += [cls.create(**item)]
-        return new_lis
+        try:
+            with open(name, 'r') as f:
+                lis = cls.from_json_string(f.read())
+                for item in lis:
+                    new_lis += [cls.create(**item)]
+            return new_lis
+        except IOError:
+            return []
 
     @classmethod
     def load_from_file_csv(cls):
