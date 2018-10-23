@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """square models"""
+
 from .rectangle import Rectangle
 
 
@@ -11,10 +12,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """getter function"""
         return self.width
 
     @size.setter
     def size(self, size):
+        """setter function"""
         if type(size) is not int:
             raise TypeError("width must be an integer")
         elif size <= 0:
