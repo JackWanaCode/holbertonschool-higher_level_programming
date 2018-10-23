@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""rectangle models"""
+"""this is rectangle models"""
+
 from .base import Base
 
 
@@ -107,6 +108,7 @@ class Rectangle(Base):
                 setattr(self, k, v)
 
     def to_dictionary(self):
+        """return a dictionary type"""
         new_dict = {}
         for k, v in self.__dict__.items():
             if 'id' == k:
