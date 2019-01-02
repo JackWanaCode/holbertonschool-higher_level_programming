@@ -12,7 +12,7 @@ for el in sys.argv:
     if i == 3:
         d = el
     i += 1
-db = MySQLdb.connect(user=u, passwd=pd, db=d)
+db = MySQLdb.connect(host="localhost", port=3306, user=u, passwd=pd, db=d)
 cur = db.cursor()
 cur.execute("SELECT * FROM states")
 rows = cur.fetchall()
