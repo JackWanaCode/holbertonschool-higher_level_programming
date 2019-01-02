@@ -11,3 +11,5 @@ cur.execute("SELECT * FROM states WHERE name LIKE '{}'".format(argv[4]))
 rows = cur.fetchall()
 for row in rows:
     print("{}".format(row))
+cur.close()
+db.close()

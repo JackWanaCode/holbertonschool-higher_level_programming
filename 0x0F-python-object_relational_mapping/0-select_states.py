@@ -10,3 +10,5 @@ cur.execute("SELECT * FROM states")
 rows = cur.fetchall()
 for row in rows:
     print("{}".format(row))
+cur.close()
+db.close()

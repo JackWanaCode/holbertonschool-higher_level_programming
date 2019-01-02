@@ -11,3 +11,5 @@ cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
 rows = cur.fetchall()
 for row in rows:
     print("{}".format(row))
+cur.close()
+db.close()
