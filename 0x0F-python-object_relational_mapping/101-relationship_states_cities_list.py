@@ -16,18 +16,9 @@ if __name__ == "__main__":
     session = Session()
     flag = 0
     st_id_remember = 0
-    for st, ct in (session.query(State, City).filter(State.id ==
-                                                     City.state_id).
-                   order_by(State.id, City.id).all()):
-        if st_id_remember == 0:
-            st_id_remember = st.id
-        if st_id_remember != st.id:
-            flag = 0
-            st_id_remember = st.id
-        if flag == 0:
-            print("{}: {}".format(st.id, st.name))
-            flag = 1
-        if st.id == ct.state_id:
+    for st in (session.query(State).order_by(State.id).all()):
+        print("{}: {}".format(st.id, st.name))
+        for ct in st.cities:
             print("\t{}: {}".format(ct.id, ct.name))
     session.commit()
     session.close()
