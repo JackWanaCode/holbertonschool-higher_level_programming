@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#http://0.0.0.0:5000/post_email hr@holbertonschool.com
 import urllib.request
 import urllib.parse
 from sys import argv
