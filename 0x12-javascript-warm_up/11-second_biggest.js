@@ -4,7 +4,7 @@
 let len = process.argv.length;
 let first;
 let second;
-if (len < 3) {
+if (len <= 3) {
   console.log(0);
 } else {
   let arr = process.argv;
