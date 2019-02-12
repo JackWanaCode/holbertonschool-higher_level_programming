@@ -11,7 +11,7 @@ if (len <= 3) {
   let arr = process.argv;
   first = second = arr[2];
   for (let i = 3; i < len; i++) {
-    if (first <= arr[i]) {
+    if (first < arr[i]) {
       second = first;
       first = arr[i];
     } else if (check || second < arr[i]) {
