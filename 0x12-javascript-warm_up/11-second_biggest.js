@@ -9,13 +9,15 @@ if (len <= 3) {
   console.log(0);
 } else {
   let arr = process.argv;
-  first = second = arr[2];
+  first = second = parseInt(arr[2]);
   for (let i = 3; i < len; i++) {
-    if (first < arr[i]) {
+    console.log(first, second, arr[i]);
+    if (first <= parseInt(arr[i])) {
       second = first;
-      first = arr[i];
-    } else if (check || second < arr[i]) {
-      second = arr[i];
+      first = parseInt(arr[i]);
+      check = 0;
+    } else if (check || second <= parseInt(arr[i])) {
+      second = parseInt(arr[i]);
       check = 0;
     }
   }
