@@ -11,7 +11,6 @@ if (len <= 3) {
   let arr = process.argv;
   first = second = parseInt(arr[2]);
   for (let i = 3; i < len; i++) {
-    console.log(first, second, arr[i]);
     if (first <= parseInt(arr[i])) {
       second = first;
       first = parseInt(arr[i]);
