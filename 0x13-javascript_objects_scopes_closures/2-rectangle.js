@@ -1,26 +1,26 @@
 #!/usr/bin/node
 class Rectangle {
   constructor (w, h) {
-    this.width = w;
-    this.height = h;
+    this._width = w;
+    this._height = h;
   }
-  get width () {
-    return this._width;
+  get _width () {
+    return this.width;
   }
-  set width (w) {
+  set _width (w) {
     if (w <= 0 || w == null) {
       return;
     }
-    this._width = w;
+    this.width = w;
   }
-  get height () {
-    return this._height;
+  get _height () {
+    return this.height;
   }
-  set height (h) {
+  set _height (h) {
     if (h <= 0 || h == null) {
-      delete this._width;
-    } else if (this._width) {
-      this._height = h;
+      delete this.width;
+    } else if (this.width) {
+      this.height = h;
     }
   }
 }
